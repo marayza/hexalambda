@@ -1,4 +1,5 @@
-name: Deploy Lambda Function
+name: Deploy to AWS Lambda
+
 on:
   push:
     branches:
@@ -9,36 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.x
 
-      - name: Install AWS CLI
-        run: |
-          sudo apt-get install python3-pip
-          pip3 install --user awscli
-        env:
-          PATH: ${{ runner.tool_cache/Python/3.8.12/x64}}:$PATH
+    - name: Build and publish the API
+      run: |
+        dotnet publish -c Release -o ./publish
+      working-directory: ./hexalambda
 
-      - name: Configure AWS credentials
-        run: |
-          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws configure set default.region us-east-1 # Defina a região AWS apropriada
-        env:
-          AWS_DEFAULT_REGION: us-east-1
-
-      - name: Build and Deploy
-        run: |
-          # Execute quaisquer comandos de compilação e empacotamento necessários aqui
-          sam build
-          sam deploy --stack-name YourStackName --capabilities CAPABILITY_IAM
-        working-directory: path/to/your/lambda/code
-
-      - name: Cleanup
-        run: aws cloudformation delete-stack --stack-name YourStackName
-        if: failure()
+    - name: Deploy to Lambda
+      run: |
+        aws lambda update-function-code --function-name hexalambda --zip-file fileb://./publish/hexalambda.zip
+        aws lambda update-function-configuration --function-name hexalambda"
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
