@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hexalambda", "src\hexalambd
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{860A56F4-F924-4DCA-A4DF-84E4485CDBA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteControllerTests", "tests\ClienteControllerTests\ClienteControllerTests.csproj", "{9F7C2797-C182-4D82-8E20-9560439BDF50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,12 +21,17 @@ Global
 		{AD91EE49-A0B2-42D4-A75E-0766547FB226}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD91EE49-A0B2-42D4-A75E-0766547FB226}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD91EE49-A0B2-42D4-A75E-0766547FB226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F7C2797-C182-4D82-8E20-9560439BDF50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F7C2797-C182-4D82-8E20-9560439BDF50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F7C2797-C182-4D82-8E20-9560439BDF50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F7C2797-C182-4D82-8E20-9560439BDF50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AD91EE49-A0B2-42D4-A75E-0766547FB226} = {7976CAFF-1692-43FD-BE23-DC479419C785}
+		{9F7C2797-C182-4D82-8E20-9560439BDF50} = {860A56F4-F924-4DCA-A4DF-84E4485CDBA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C196DC58-4018-4C72-9D47-F7E5C4948AF1}
