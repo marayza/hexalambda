@@ -26,7 +26,7 @@ jobs:
     - name: Build and publish the API
       run: |
         dotnet publish -c Release -o ./publish
-      working-directory: ./hexalambda
+      working-directory: /home/runner/work/hexalambda/hexalambda
 
     - name: Deploy to Lambda
       run: |
