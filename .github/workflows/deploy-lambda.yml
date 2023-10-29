@@ -1,4 +1,4 @@
-name: Deploy to AWS Lambda
+name: Deploy AWS Lambda
 
 on:
   push:
@@ -18,15 +18,42 @@ jobs:
       with:
         dotnet-version: 6.x
 
+    - name: Debug Info
+      run: |
+        echo "Current directory: $(pwd)"
+        ls -al
+
     - name: Build and publish the API
       run: |
         dotnet publish -c Release -o ./publish
-      working-directory: ./hexalambda
+      working-directory: /home/runner/work/hexalambda/hexalambda
 
+    - name: Zip Files
+      run: |
+        cd ./publish
+        zip -r hexalamba.zip *
+      working-directory: /home/runner/work/hexalambda/hexalambda
+
+    - name: Verify ZIP File
+      run: |
+        if [ -f ./publish/hexalamba.zip ]; then
+          echo "ZIP file exists."
+        else
+          echo "ZIP file does not exist."
+        fi
+      working-directory: /home/runner/work/hexalambda/hexalambda
+      
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+    
     - name: Deploy to Lambda
       run: |
-        aws lambda update-function-code --function-name hexalambda --zip-file fileb://./publish/hexalambda.zip
-        aws lambda update-function-configuration --function-name hexalambda"
+        aws lambda update-function-code --function-name hexalambda --zip-file fileb://./publish/hexalamba.zip
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         aws-region: us-east-1
