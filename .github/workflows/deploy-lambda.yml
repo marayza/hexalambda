@@ -18,6 +18,11 @@ jobs:
       with:
         dotnet-version: 6.x
 
+    - name: Debug Info
+      run: |
+        echo "Current directory: $(pwd)"
+        ls -al
+
     - name: Build and publish the API
       run: |
         dotnet publish -c Release -o ./publish
