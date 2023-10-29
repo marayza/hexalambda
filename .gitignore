@@ -1,0 +1,61 @@
+# Ignorar arquivos e diretórios gerados automaticamente
+bin/
+obj/
+Debug/
+Release/
+
+# Ignorar arquivos de configuração específicos de ambiente
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignorar arquivos de dependências e pacotes NuGet
+packages/
+*.nupkg
+# Para ignorar o diretório 'packages' gerado pelo NuGet Package Restore
+repositories.config
+
+# Ignorar arquivos de compilação
+*.log
+*.dll
+*.exe
+
+# Ignorar arquivos temporários
+[Tt]humbs.db
+*.DS_Store
+
+# Ignorar arquivos de compilação para Visual Studio
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+
+# Ignorar arquivos de cache
+ReSharper/
+*.resharper
+[Tt]est[Rr]esult*/
+
+# Ignorar arquivos de publicação
+_PublishedWebsites/
+*.dbmdl
+*.jfm
+*.pfx
+*.publishsettings
+node_modules/
+bower_components/
