@@ -2,6 +2,7 @@
 bin/
 obj/
 Debug/
+Debug/net6.0/
 Release/
 
 # Ignorar arquivos de configuração específicos de ambiente
