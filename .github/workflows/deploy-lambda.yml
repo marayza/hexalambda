@@ -28,10 +28,16 @@ jobs:
         dotnet publish -c Release -o ./publish
       working-directory: /home/runner/work/hexalambda/hexalambda
 
+    - name: Zip Files
+      run: |
+        cd ./publish
+        zip -r mylambda.zip *
+      working-directory: /home/runner/work/hexalambda/hexalambda
+
     - name: Deploy to Lambda
       run: |
-        aws lambda update-function-code --function-name hexalambda --zip-file fileb://./publish/hexalambda.zip
-        aws lambda update-function-configuration --function-name hexalambda"
+        aws lambda update-function-code --function-name hexalambda --zip-file fileb://./publish/mylambda.zip
+        aws lambda update-function-configuration --function-name hexalambda --environment "Variables={YOUR_ENV_VARIABLES}"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
