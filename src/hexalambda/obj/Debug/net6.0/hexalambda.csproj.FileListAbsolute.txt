@@ -162,4 +162,5 @@ C:\POS\hexalambda\src\hexalambda\bin\Debug\net6.0\Microsoft.Extensions.FileSyste
 C:\POS\hexalambda\src\hexalambda\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\POS\hexalambda\src\hexalambda\bin\Debug\net6.0\System.Text.Json.dll
 C:\POS\hexalambda\src\hexalambda\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
-C:\POS\hexalambda\src\hexalambda\obj\Debug\net6.0\hexalambda.csproj.AssemblyReference.cache
+C:\POS\hexalambda\src\hexalambda\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\POS\hexalambda\src\hexalambda\bin\Debug\net6.0\AWSSDK.SimpleSystemsManagement.dll

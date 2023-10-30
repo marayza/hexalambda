@@ -45,6 +45,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AWSSDK.SimpleSystemsManagement": {
+              "target": "Package",
+              "version": "[3.7.202.4, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.1.15, )"

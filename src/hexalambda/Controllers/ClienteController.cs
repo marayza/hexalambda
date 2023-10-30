@@ -1,4 +1,7 @@
-﻿using Dapper;
+﻿using Amazon;
+using Amazon.SimpleSystemsManagement;
+using Amazon.SimpleSystemsManagement.Model;
+using Dapper;
 using hexalambda.Models;
 using hexalambda.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +23,7 @@ namespace hexalambda.Controllers
         }
 
         [HttpGet]
+
         public async Task<IActionResult> AutenticarPorCPF(string cpf)
         {
             try
@@ -31,7 +35,7 @@ namespace hexalambda.Controllers
                 }
                 else
                 {
-                    return NotFound(); 
+                    return NotFound();
                 }
             }
             catch (Exception ex)
@@ -39,5 +43,6 @@ namespace hexalambda.Controllers
                 return StatusCode(500, "Erro interno do servidor: " + ex.Message);
             }
         }
+        
     }
 }

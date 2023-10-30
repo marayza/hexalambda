@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "9bGLQf5PqjBE2LG3ZYKzRjdLxLvQgJoo70F434eRSIP4mf2SENLCl5dOQekOwQghD6kCHVhGUYGH+k8Um6iLPQ==",
+  "dgSpecHash": "WGCMfKaOGftFoMoF2PibEGMUlNoHuJM6cHJr0AK4GhFEVLZlJBcYRpBiu9ONyY+26NMHDZKRelizJeHlTE1uzA==",
   "success": true,
   "projectFilePath": "C:\\POS\\hexalambda\\src\\hexalambda\\hexalambda.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\marayza.gonzaga\\.nuget\\packages\\awssdk.core\\3.7.204.10\\awssdk.core.3.7.204.10.nupkg.sha512",
+    "C:\\Users\\marayza.gonzaga\\.nuget\\packages\\awssdk.simplesystemsmanagement\\3.7.202.4\\awssdk.simplesystemsmanagement.3.7.202.4.nupkg.sha512",
     "C:\\Users\\marayza.gonzaga\\.nuget\\packages\\dapper\\2.1.15\\dapper.2.1.15.nupkg.sha512",
     "C:\\Users\\marayza.gonzaga\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.13\\microsoft.entityframeworkcore.7.0.13.nupkg.sha512",
     "C:\\Users\\marayza.gonzaga\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.13\\microsoft.entityframeworkcore.abstractions.7.0.13.nupkg.sha512",

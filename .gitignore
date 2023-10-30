@@ -1,6 +1,8 @@
 # Ignorar arquivos e diretórios gerados automaticamente
 bin/
+src/bin/
 obj/
+src/obj/
 Debug/
 Debug/net6.0/
 Release/

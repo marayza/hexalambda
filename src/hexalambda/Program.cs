@@ -1,3 +1,4 @@
+using hexalambda;
 using hexalambda.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
@@ -10,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-string connectionString = builder.Configuration.GetConnectionString("PostgreSQLConnection");
+string connectionString = await new Services().GetConnection();
 
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>(provider => new ClienteRepository(connectionString));
 
