@@ -26,12 +26,18 @@ jobs:
       run: |
         dotnet publish -c Release -o ./publish
       working-directory: /home/runner/work/hexalambda/hexalambda
-
+      
     - name: Zip Files
       run: |
         cd ./publish
         zip -r hexalamba.zip *
       working-directory: /home/runner/work/hexalambda/hexalambda
+    
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: lambda-zip
+        path: /home/runner/work/hexalambda/hexalambda/publish/hexalamba.zip
 
     - name: Verify ZIP File
       run: |
