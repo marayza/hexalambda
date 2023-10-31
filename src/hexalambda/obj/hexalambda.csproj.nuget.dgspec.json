@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[3.7.202.4, )"
             },
+            "Amazon.Lambda.AspNetCoreServer.Hosting": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.1.15, )"
